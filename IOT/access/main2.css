@@ -1,0 +1,130 @@
+.a {
+  border: 20px solid black;
+}
+
+
+
+.button {
+    border: none;
+    color: white;
+    padding: 3% 5%;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 10%;
+  
+  }
+  
+  .button1 {background-color: #038407;} /* Green */
+  .button2 {background-color: #283033;} /* Blue */
+  
+
+  
+  div.bang1:hover {
+    opacity: 0.2;
+    background-image: linear-gradient(to bottom,rgb(251, 130, 223), blueviolet);
+  }
+  div.bang2:hover{
+    background: green;
+  }
+  div.bang3:hover{
+    background: black;
+  }
+  
+  button.button1:hover, button.button2:hover{
+    background: rgb(180, 39, 39);
+  }
+
+  .gradient-custom {
+    /* fallback for old browsers */
+    background: #6a11cb;
+  
+    /* Chrome 10-25, Safari 5.1-6 */
+    background: -webkit-linear-gradient(to right, rgba(106, 17, 203, 0.5), rgba(37, 117, 252, 0.5));
+  
+    /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    background: linear-gradient(to right, rgba(76, 9, 149, 0.5), rgba(37, 117, 252, 0.5))
+  }
+
+
+
+.btn-danger:hover{
+  background-color: #43306a !important;
+}
+.btn-success:hover{
+  background-color: #4928ca !important;
+}
+.btn-secondary:hover{
+  background-color: #6a11cb !important;
+}
+
+/*====================tonggle========================*/
+
+
+
+$toggle-background-color-on: dodgerblue;
+$toggle-background-color-off: darkgray;
+$toggle-control-color: white;
+$toggle-width: 100px;
+$toggle-height: 50px;
+$toggle-gutter: 5px;
+$toggle-radius: 50%;
+$toggle-control-speed: .15s;
+$toggle-control-ease: ease-in;
+
+// These are our computed variables
+// change at your own risk.
+$toggle-radius: $toggle-height / 2;
+$toggle-control-size: $toggle-height - ($toggle-gutter * 2);
+
+.toggle-control {
+  display: block;
+  position: relative;
+  padding-left: $toggle-width;
+  margin-bottom: 12px;
+  cursor: pointer;
+  font-size: 22px;
+  user-select: none;
+
+  input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    height: 0;
+    width: 0;
+  }
+
+  input:checked ~ .control {
+    background-color: $toggle-background-color-on;
+    
+    &:after {
+      left: $toggle-width - $toggle-control-size - $toggle-gutter;
+    }
+  }
+
+  .control {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: $toggle-height;
+    width: $toggle-width;
+    border-radius: $toggle-radius;
+    background-color: $toggle-background-color-off;
+    transition: background-color $toggle-control-speed $toggle-control-ease;
+
+    &:after {
+      content: "";
+      position: absolute;
+      left: $toggle-gutter;
+      top: $toggle-gutter;
+      width: $toggle-control-size;
+      height: $toggle-control-size;
+      border-radius: $toggle-radius;
+      background: $toggle-control-color;
+      transition: left $toggle-control-speed $toggle-control-ease;
+    }
+  }
+}
